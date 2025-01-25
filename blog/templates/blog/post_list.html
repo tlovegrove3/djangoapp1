@@ -9,18 +9,16 @@
     <header>
         <h1><a href="/">Test Blog</a></h1>
     </header>
-
-    <article>
-        <time>published: 2025.01.25, 16:14</time>
-        <h2><a href="">My first post</a></h2>
-        <p>Just writing some words in the file that will get used to display on a web page.</p>
+{% for post in posts %}
+    <time>published: {{ post.published_date }}</time>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
     </article>
-
-    <article>
-        <time>published: 2025.01.25, 16:14</time>
-        <h2><a href="">My second post</a></h2>
-        <p>And here's a second post to test things out.</p>
-    </article>
+{% endfor %}
+    <footer>
+        <p>&copy; 2025 Test Blog</p>
+    </footer>
+ 
 </body>
 
 </html>
