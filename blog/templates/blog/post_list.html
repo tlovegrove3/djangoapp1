@@ -3,13 +3,13 @@
 {% block content %}
     {% for post in posts %}
         <article class="post shadow p-4 mb-4 border rounded bg-body-secondary">
-            <h2 class="h4 mb-2">
-                <a href="#" class="text-decoration-none text-primary">{{ post.title }}</a>
+            <h2 class="h4 mb-2 font-heading">
+                <a href="{% url 'post_detail' pk=post.pk %}" class="text-decoration-none text-primary">{{ post.title }}</a>
             </h2>
-            <time class="text-muted small d-block mb-2">
+            <time class="border-bottom pb-1 text-muted small d-block mb-3 font-body">
                 Published: {{ post.published_date }}
             </time>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <!-- <p class="p-1 font-body">{{ post.text|linebreaksbr }}</p> -->
         </article>
     {% endfor %}
 {% endblock %}

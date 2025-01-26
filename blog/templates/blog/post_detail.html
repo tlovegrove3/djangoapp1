@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <article class="post shadow p-4 mb-4 border rounded bg-body-secondary">
+        <h2 class="h4 mb-2 text-decoration-none text-primary font-heading">{{ post.title }}</h2>
+        {% if post.published_date %}
+            <time class="border-bottom pb-1 text-muted small d-block mb-3 font-body">
+                Published: {{ post.published_date }}
+            </time>
+        {% endif %}
+        <p class="p-1 font-body">{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endblock %}
