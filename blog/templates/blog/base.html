@@ -24,6 +24,11 @@
 
         <!-- Header -->
         <header class="text-center mb-4 font-heading">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu">
+                    {% include './icons/file-earmark-plus.svg' %}
+                </a>
+            {% endif %}
             <h1 class="display-4 fw-bold">
                 <a href="/" class="text-decoration-none text-body">My Blogs</a>
             </h1>

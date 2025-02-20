@@ -2,6 +2,13 @@
 
 {% block content %}
     <article class="post shadow p-4 mb-4 border rounded bg-body-secondary">
+        <aside class="actions">
+            {% if user.is_authenticated %}
+                <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
+                    {% include './icons/pencil-fill.svg' %}
+                </a>
+            {% endif %}
+        </aside>
         <h2 class="h4 mb-2 text-decoration-none text-primary font-heading">{{ post.title }}</h2>
         {% if post.published_date %}
             <time class="border-bottom pb-1 text-muted small d-block mb-3 font-body">
