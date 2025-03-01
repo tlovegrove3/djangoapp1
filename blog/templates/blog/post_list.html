@@ -9,7 +9,8 @@
             <time class="border-bottom pb-1 text-muted small d-block mb-3 font-body">
                 Published: {{ post.published_date }}
             </time>
-            <!-- <p class="p-1 font-body">{{ post.text|linebreaksbr }}</p> -->
+            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+            {% comment %} <p class="p-1 font-body">{{ post.text|linebreaksbr }}</p> {% endcomment %}
         </article>
     {% endfor %}
 {% endblock %}
